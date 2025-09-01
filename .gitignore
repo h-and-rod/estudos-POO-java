@@ -1,0 +1,44 @@
+# Arquivos de classes compiladas
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# NetBeans specific
+nbproject/
+nbproject/private/
+build/
+dist/
+**/test/build.xml
+**/test/manifest.mf
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Ignore libraries copied locally
+lib/
+
+# Other IDE metadata
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
