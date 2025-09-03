@@ -10,21 +10,33 @@ O repositório está organizado em pastas de projetos individuais, cada uma cont
 ```
 estudos-poo-java/        # Diretório raiz do repositório, contendo todos os projetos de estudo de POO em Java.
 │
-├── introducao/         # Tema
+├── introducao/         # Tema 1
+│    ├── prjExemplo_1/         # Primeiro projeto de exemplo.
+│    │  ├── src/              # Código-fonte do projeto.
+│    │  └── lib/              # Bibliotecas externas utilizadas pelo projeto (JARs, dependências).
+│    │
+│    ├── prjExemplo_2/         # Segundo projeto de exemplo, com a mesma estrutura do prjExamplo_1.
+│    │  ├── src/              
+│    │  ├── lib/              
+│    │  └── README.md          # Alguma eventual anotação sobre o exercicio
+│    │
+│    └── prjExercicio/          # Projeto de exercício, normalmente para praticar conceitos aprendidos.
+│       ├── src/              
+│       └── lib/  
 │
-├── prjExemplo_1/         # Primeiro projeto de exemplo.
-│   ├── src/              # Código-fonte do projeto.
-│   └── lib/              # Bibliotecas externas utilizadas pelo projeto (JARs, dependências).
 │
-├── prjExemplo_2/         # Segundo projeto de exemplo, com a mesma estrutura do prjExamplo_1.
-│   ├── src/
-│   ├── lib/
-│   └── README.md          # Alguma eventual anotação
-│
-├── prjExercicio/          # Projeto de exercício, normalmente para praticar conceitos aprendidos.
-│   ├── src/
-│   └── lib/
-│
+├── especializacao/         # Tema 2
+│    ├── prjExemplo_1/         
+│    │  ├── src/              
+│    │  └── lib/              
+│    │
+│    ├── prjExercicio/         
+│    │  ├── src/  
+│    │  └── lib/  
+│    └── README.md          # Alguma eventual anotação sobre o tema           
+.
+.
+.
 └── README.md             # Documentação do repositório, com instruções gerais e informações sobre os projetos.
 ```
 
