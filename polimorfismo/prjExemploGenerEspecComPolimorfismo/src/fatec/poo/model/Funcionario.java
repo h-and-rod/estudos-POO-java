@@ -9,11 +9,13 @@ abstract public class Funcionario {
     private int registro;
     private String nome;
     private String dtAdmissao;
+    private String cargo;
 
-    public Funcionario(int r, String n, String dtAdm) {
+    public Funcionario(int r, String n, String dtAdm, String carg) {
         registro = r;
         nome = n;
         dtAdmissao = dtAdm;
+        cargo = carg;
     }
 
     abstract public double calcSalBruto();
@@ -50,5 +52,13 @@ abstract public class Funcionario {
 
     public void setDtAdmissao(String dtAdm) {
         dtAdmissao = dtAdm;
+    }
+
+    public String getCargo(){
+       return cargo;
+    }
+
+    public void setCargo(String carg){
+        cargo = carg;
     }
 }

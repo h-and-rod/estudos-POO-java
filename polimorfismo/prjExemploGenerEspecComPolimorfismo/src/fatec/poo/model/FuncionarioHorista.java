@@ -9,10 +9,19 @@ public class FuncionarioHorista extends Funcionario {
 
     private double valHorTrab;
     private int qtdeHorTrab;
+    
 
-    public FuncionarioHorista(int r, String n, String dtAdm, double vht) {
-        super(r, n, dtAdm); // construtor da superclasse
+    public FuncionarioHorista(int r, String n, String dtAdm, double vht, String carg) {
+        super(r, n, dtAdm, carg); // construtor da superclasse
         valHorTrab = vht;
+    }
+
+    public double calcGratificacao(){
+        return (calcSalBruto() * 0.075);
+    }
+
+    public double calcSalLiquido(){
+        return (super.calcSalLiquido() + calcGratificacao());
     }
 
     public void setQtdHorTrab(int qht) {

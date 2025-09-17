@@ -11,7 +11,8 @@ public class Aplic {
             123,
             "José Guimarães",
             "24/02/1970",
-            25.3);
+            25.3,
+            "Pedreiro");
             
         funcHor.setQtdHorTrab(90);
         
@@ -19,6 +20,8 @@ public class Aplic {
         System.out.println("Salário bruto: " + funcHor.calcSalBruto());
         System.out.println("Desconto: " + funcHor.calcDesconto());
         System.out.println("Salário líquido: " + funcHor.calcSalLiquido());
+        System.out.println("Cargo: " + funcHor.getCargo());
+        System.out.println("Gratificação: " + funcHor.calcGratificacao());
         System.out.println(""); //pula uma linha no terminal para melhor visualização
         
         FuncionarioMensalista funcMens = new FuncionarioMensalista(
@@ -26,12 +29,14 @@ public class Aplic {
             "Junior Augusto",
             "12/10/1972",
             1045,
-            3);
-        
-        System.out.println("Dados " + funcMens.getNome() + ":");
-        System.out.println("Salário bruto: " + funcMens.calcSalBruto());
-        System.out.println("Desconto: " + funcMens.calcDesconto());
-        System.out.println("Salário líquido: " + funcMens.calcSalLiquido());
+            3,
+            "Astronauta");
+            
+            System.out.println("Dados " + funcMens.getNome() + ":");
+            System.out.println("Salário bruto: " + funcMens.calcSalBruto());
+            System.out.println("Desconto: " + funcMens.calcDesconto());
+            System.out.println("Salário líquido: " + funcMens.calcSalLiquido());
+            System.out.println("Cargo: " + funcMens.getCargo());
             
 
     }
