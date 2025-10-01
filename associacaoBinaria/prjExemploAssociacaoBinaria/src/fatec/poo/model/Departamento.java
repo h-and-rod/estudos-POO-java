@@ -34,4 +34,16 @@ public class Departamento {
         numFunc++;
     }
     
+    public void listarFuncionarios(){
+        System.out.println("\nSigla: " + sigla);
+        System.out.println("Nome: " + nome);
+        System.out.println("Qtde. de Funcionários: " + numFunc );
+        System.out.println("\nRegistro\t\tNome\t\tCargo");
+        for(int i=0; i < numFunc; i++){
+            System.out.print(funcionarios[i].getRegistro() + "\t\t");
+            System.out.print(funcionarios[i].getNome() + "\t\t");
+            System.out.println(funcionarios[i].getCargo() + "\t\t");
+        }
+    }
+    
 }
