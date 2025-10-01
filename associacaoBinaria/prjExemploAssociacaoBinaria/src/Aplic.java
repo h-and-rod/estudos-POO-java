@@ -52,7 +52,9 @@ public class Aplic {
         
         //Estabelece a associação entre um objeto da classe Departamento com
         //um objeto das classes FuncionarioHorista e FuncionarioMensalista
-    
+        dep3.addFuncionario(funcHor);
+        dep1.addFuncionario(funcMen);
+        
         //Estabelece a associação entre um objeto da classe Departamento com
         //um objeto da classe FuncionarioComissionado
     
