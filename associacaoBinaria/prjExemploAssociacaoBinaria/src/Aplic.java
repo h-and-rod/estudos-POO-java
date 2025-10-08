@@ -3,10 +3,11 @@ import fatec.poo.model.Departamento;
 import fatec.poo.model.FuncionarioComissionado;
 import fatec.poo.model.FuncionarioHorista;
 import fatec.poo.model.FuncionarioMensalista;
+import fatec.poo.model.Projeto;
 
 /**
  *
- * @author Dimas
+ * @author Dimas + h-and-rod
  */
 public class Aplic {
     public static void main(String[] args) {
@@ -33,6 +34,13 @@ public class Aplic {
         funcMen.setCargo("Aux. Administrativo");
         funcCom.setCargo("Vendedor");
      
+        Projeto proj = new Projeto(5253, "Programação do módulo de compras");
+        proj.setDtInicio("01/01/2025");
+        proj.setDtTermino("31/12/2026");
+        funcHor.setProjeto(proj);
+        funcMen.setProjeto(proj);
+        funcCom.setProjeto(proj);
+
         //Estabelece a associação entre um objeto da classse FuncionárioHorista
         //com um objeto da classe Departamento
         funcHor.setDepartamento(dep3);
@@ -62,6 +70,10 @@ public class Aplic {
         dep2.addFuncionario(funcCom);
         dep2.listarFuncionarios();
         
+        proj.addFuncionario(funcHor);
+        proj.addFuncionario(funcMen);
+        proj.addFuncionario(funcCom);
+        proj.listarFuncionarios();
     
     }    
 }

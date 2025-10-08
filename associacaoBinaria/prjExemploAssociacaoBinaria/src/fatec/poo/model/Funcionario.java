@@ -2,7 +2,7 @@ package fatec.poo.model;
 
 /**
  *
- * @author Dimas
+ * @author Dimas + h-and-rod
  */
 abstract public class Funcionario {
     private int registro;
@@ -10,6 +10,7 @@ abstract public class Funcionario {
     private String dtAdmissao;  
     private String cargo;
     private Departamento departamento;
+    private Projeto projeto;
     
     public Funcionario(int r, String n, String dtAdm){
         registro = r;
@@ -50,5 +51,11 @@ abstract public class Funcionario {
         this.departamento = departamento;
     }
     
-    
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
+    }   
 }
