@@ -5,6 +5,8 @@
  */
 package fatec.poo.view;
 
+import fatec.poo.model.PropostaSeguro;
+
 /**
  *
  * @author Eu
@@ -398,4 +400,5 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtValorCarro;
     // End of variables declaration//GEN-END:variables
+    private PropostaSeguro objPropSeguro;
 }
