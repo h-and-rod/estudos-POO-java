@@ -27,6 +27,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btgrpSexo = new javax.swing.ButtonGroup();
         lblNome = new javax.swing.JLabel();
         lblValorCarro = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -70,6 +71,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
 
         pnlSexo.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo"));
 
+        btgrpSexo.add(rbtMasculino);
         rbtMasculino.setText("Masculino");
         rbtMasculino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +79,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
             }
         });
 
+        btgrpSexo.add(rbtFeminino);
         rbtFeminino.setText("Feminino");
 
         javax.swing.GroupLayout pnlSexoLayout = new javax.swing.GroupLayout(pnlSexo);
@@ -367,6 +370,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btgrpSexo;
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnMontar;
