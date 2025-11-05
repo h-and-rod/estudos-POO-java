@@ -27,21 +27,309 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblNome = new javax.swing.JLabel();
+        lblValorCarro = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        txtValorCarro = new javax.swing.JTextField();
+        pnlSexo = new javax.swing.JPanel();
+        rbtMasculino = new javax.swing.JRadioButton();
+        rbtFeminino = new javax.swing.JRadioButton();
+        lblFaixaIdade = new javax.swing.JLabel();
+        cbxFaixaIdade = new javax.swing.JComboBox<>();
+        pnlPerfil = new javax.swing.JPanel();
+        chkUnicoMotorista = new javax.swing.JCheckBox();
+        chkSomenteCidade = new javax.swing.JCheckBox();
+        pnlShowProposta = new javax.swing.JPanel();
+        lblValorBaseSeguro = new javax.swing.JLabel();
+        lblDescontoSexo = new javax.swing.JLabel();
+        lblDescontoIdade = new javax.swing.JLabel();
+        lblDescontoPerfil = new javax.swing.JLabel();
+        lblValorSeguro = new javax.swing.JLabel();
+        lblShowValorBaseSeguro = new javax.swing.JLabel();
+        lblShowDescontoSexo = new javax.swing.JLabel();
+        lblShowDescontoIdade = new javax.swing.JLabel();
+        lblShowDescontoPerfil = new javax.swing.JLabel();
+        lblShowValorSeguro = new javax.swing.JLabel();
+        btnMontar = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Proposta de Seguro");
+
+        lblNome.setText("Nome:");
+
+        lblValorCarro.setText("Valor do carro:");
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+
+        pnlSexo.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo"));
+
+        rbtMasculino.setText("Masculino");
+        rbtMasculino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtMasculinoActionPerformed(evt);
+            }
+        });
+
+        rbtFeminino.setText("Feminino");
+
+        javax.swing.GroupLayout pnlSexoLayout = new javax.swing.GroupLayout(pnlSexo);
+        pnlSexo.setLayout(pnlSexoLayout);
+        pnlSexoLayout.setHorizontalGroup(
+            pnlSexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSexoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(rbtMasculino)
+                .addGap(18, 18, 18)
+                .addComponent(rbtFeminino)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        pnlSexoLayout.setVerticalGroup(
+            pnlSexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSexoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtFeminino, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(rbtMasculino, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblFaixaIdade.setText("Faixa de idade:");
+
+        cbxFaixaIdade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abaixo de 26 anos", "Entre 26 e 35 anos", "Acima de 35 anos" }));
+
+        pnlPerfil.setBorder(javax.swing.BorderFactory.createTitledBorder("Perfil"));
+
+        chkUnicoMotorista.setText("Único motorista");
+        chkUnicoMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkUnicoMotoristaActionPerformed(evt);
+            }
+        });
+
+        chkSomenteCidade.setText("Dirige somente na cidade");
+
+        javax.swing.GroupLayout pnlPerfilLayout = new javax.swing.GroupLayout(pnlPerfil);
+        pnlPerfil.setLayout(pnlPerfilLayout);
+        pnlPerfilLayout.setHorizontalGroup(
+            pnlPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPerfilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkUnicoMotorista)
+                    .addComponent(chkSomenteCidade))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlPerfilLayout.setVerticalGroup(
+            pnlPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPerfilLayout.createSequentialGroup()
+                .addComponent(chkUnicoMotorista)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chkSomenteCidade))
+        );
+
+        pnlShowProposta.setBorder(javax.swing.BorderFactory.createTitledBorder("Proposta"));
+
+        lblValorBaseSeguro.setText("Valor base do seguro:");
+
+        lblDescontoSexo.setText("Desconto sexo:");
+
+        lblDescontoIdade.setText("Desconto idade:");
+
+        lblDescontoPerfil.setText("Desconto perfil:");
+
+        lblValorSeguro.setText("Valor do seguro:");
+
+        lblShowValorBaseSeguro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowValorBaseSeguro.setMaximumSize(new java.awt.Dimension(6, 6));
+
+        lblShowDescontoSexo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowDescontoSexo.setMaximumSize(new java.awt.Dimension(6, 6));
+
+        lblShowDescontoIdade.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowDescontoIdade.setMaximumSize(new java.awt.Dimension(6, 6));
+
+        lblShowDescontoPerfil.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowDescontoPerfil.setMaximumSize(new java.awt.Dimension(6, 6));
+
+        lblShowValorSeguro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowValorSeguro.setMaximumSize(new java.awt.Dimension(6, 6));
+
+        javax.swing.GroupLayout pnlShowPropostaLayout = new javax.swing.GroupLayout(pnlShowProposta);
+        pnlShowProposta.setLayout(pnlShowPropostaLayout);
+        pnlShowPropostaLayout.setHorizontalGroup(
+            pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblValorBaseSeguro)
+                    .addComponent(lblDescontoSexo)
+                    .addComponent(lblDescontoIdade)
+                    .addComponent(lblDescontoPerfil)
+                    .addComponent(lblValorSeguro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblShowDescontoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblShowDescontoSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblShowValorBaseSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblShowDescontoIdade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblShowValorSeguro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        pnlShowPropostaLayout.setVerticalGroup(
+            pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                        .addComponent(lblValorBaseSeguro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6))
+                    .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                        .addComponent(lblShowValorBaseSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                        .addComponent(lblDescontoSexo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(5, 5, 5))
+                    .addGroup(pnlShowPropostaLayout.createSequentialGroup()
+                        .addComponent(lblShowDescontoSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDescontoIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblShowDescontoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDescontoPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblShowDescontoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblShowValorSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblValorSeguro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
+        );
+
+        btnMontar.setText("Montar");
+        btnMontar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMontarActionPerformed(evt);
+            }
+        });
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        btnSair.setText("Sair");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblValorCarro)
+                            .addComponent(lblNome))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtValorCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFaixaIdade)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbxFaixaIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(pnlShowProposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(186, 186, 186)
+                .addComponent(btnMontar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCalcular)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLimpar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSair)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNome)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblValorCarro)
+                            .addComponent(txtValorCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFaixaIdade)
+                            .addComponent(cbxFaixaIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlShowProposta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMontar)
+                    .addComponent(btnCalcular)
+                    .addComponent(btnLimpar)
+                    .addComponent(btnSair))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void rbtMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMasculinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtMasculinoActionPerformed
+
+    private void chkUnicoMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkUnicoMotoristaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkUnicoMotoristaActionPerformed
+
+    private void btnMontarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMontarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMontarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +367,32 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnMontar;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JComboBox<String> cbxFaixaIdade;
+    private javax.swing.JCheckBox chkSomenteCidade;
+    private javax.swing.JCheckBox chkUnicoMotorista;
+    private javax.swing.JLabel lblDescontoIdade;
+    private javax.swing.JLabel lblDescontoPerfil;
+    private javax.swing.JLabel lblDescontoSexo;
+    private javax.swing.JLabel lblFaixaIdade;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblShowDescontoIdade;
+    private javax.swing.JLabel lblShowDescontoPerfil;
+    private javax.swing.JLabel lblShowDescontoSexo;
+    private javax.swing.JLabel lblShowValorBaseSeguro;
+    private javax.swing.JLabel lblShowValorSeguro;
+    private javax.swing.JLabel lblValorBaseSeguro;
+    private javax.swing.JLabel lblValorCarro;
+    private javax.swing.JLabel lblValorSeguro;
+    private javax.swing.JPanel pnlPerfil;
+    private javax.swing.JPanel pnlSexo;
+    private javax.swing.JPanel pnlShowProposta;
+    private javax.swing.JRadioButton rbtFeminino;
+    private javax.swing.JRadioButton rbtMasculino;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtValorCarro;
     // End of variables declaration//GEN-END:variables
 }
