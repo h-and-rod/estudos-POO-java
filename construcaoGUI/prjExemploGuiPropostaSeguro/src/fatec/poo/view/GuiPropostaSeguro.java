@@ -72,6 +72,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         pnlSexo.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo"));
 
         btgrpSexo.add(rbtMasculino);
+        rbtMasculino.setSelected(true);
         rbtMasculino.setText("Masculino");
         rbtMasculino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
