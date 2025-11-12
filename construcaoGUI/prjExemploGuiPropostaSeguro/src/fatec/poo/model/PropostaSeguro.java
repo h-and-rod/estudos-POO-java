@@ -35,6 +35,10 @@ public class PropostaSeguro {
         this.perfilCidade = perfilCidade;
     }
 
+    public double getValorBase() {
+        return valorBase;
+    }
+    
     public double calcDescSexo(){
         double desc;
         if (sexo){//masculino

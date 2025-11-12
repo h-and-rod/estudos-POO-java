@@ -280,7 +280,7 @@
                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                           <Component id="lblShowDescontoPerfil" min="-2" pref="100" max="-2" attributes="0"/>
                           <Component id="lblShowDescontoSexo" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="lblShowValorBaseSeguro" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="lblShowValorBase" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Component id="lblShowDescontoIdade" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="lblShowValorSeguro" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
@@ -299,7 +299,7 @@
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblShowValorBaseSeguro" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="lblShowValorBase" min="-2" pref="22" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -358,8 +358,9 @@
             <Property name="text" type="java.lang.String" value="Valor do seguro:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblShowValorBaseSeguro">
+        <Component class="javax.swing.JLabel" name="lblShowValorBase">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder bevelType="1"/>
@@ -369,6 +370,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblShowDescontoSexo">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder bevelType="1"/>
@@ -378,6 +380,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblShowDescontoIdade">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder bevelType="1"/>
@@ -387,6 +390,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblShowDescontoPerfil">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder bevelType="1"/>
@@ -396,6 +400,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblShowValorSeguro">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder bevelType="1"/>
@@ -433,6 +438,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

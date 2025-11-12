@@ -6,6 +6,7 @@
 package fatec.poo.view;
 
 import fatec.poo.model.PropostaSeguro;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -48,7 +49,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         lblDescontoIdade = new javax.swing.JLabel();
         lblDescontoPerfil = new javax.swing.JLabel();
         lblValorSeguro = new javax.swing.JLabel();
-        lblShowValorBaseSeguro = new javax.swing.JLabel();
+        lblShowValorBase = new javax.swing.JLabel();
         lblShowDescontoSexo = new javax.swing.JLabel();
         lblShowDescontoIdade = new javax.swing.JLabel();
         lblShowDescontoPerfil = new javax.swing.JLabel();
@@ -152,14 +153,19 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
 
         lblValorSeguro.setText("Valor do seguro:");
 
-        lblShowValorBaseSeguro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblShowValorBase.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblShowValorBase.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        lblShowDescontoSexo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblShowDescontoSexo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        lblShowDescontoIdade.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblShowDescontoIdade.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        lblShowDescontoPerfil.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblShowDescontoPerfil.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        lblShowValorSeguro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblShowValorSeguro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         javax.swing.GroupLayout pnlShowPropostaLayout = new javax.swing.GroupLayout(pnlShowProposta);
@@ -179,7 +185,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lblShowDescontoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblShowDescontoSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblShowValorBaseSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblShowValorBase, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblShowDescontoIdade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblShowValorSeguro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -193,7 +199,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
                         .addComponent(lblValorBaseSeguro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(6, 6, 6))
                     .addGroup(pnlShowPropostaLayout.createSequentialGroup()
-                        .addComponent(lblShowValorBaseSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblShowValorBase, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(pnlShowPropostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlShowPropostaLayout.createSequentialGroup()
@@ -238,6 +244,11 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         });
 
         btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,16 +335,52 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     }//GEN-LAST:event_chkUnicoMotoristaActionPerformed
 
     private void btnMontarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMontarActionPerformed
-        // TODO add your handling code here:
+        objPropSeguro = new PropostaSeguro(txtNome.getName(), Double.parseDouble(txtValorCarro.getText()));
+        
+        if(rbtMasculino.isSelected()){
+            objPropSeguro.setSexo(true);
+        } else {
+            objPropSeguro.setSexo(false);
+        }
+        
+        objPropSeguro.setFaixaIdade(cbxFaixaIdade.getSelectedIndex());
+        
+        objPropSeguro.setPerfilMotorista(chkUnicoMotorista.isSelected());
+        objPropSeguro.setPerfilCidade(chkSomenteCidade.isSelected());
+        
+         
+        
+        
     }//GEN-LAST:event_btnMontarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        // TODO add your handling code here:
+        txtNome.setText(null);
+        txtValorCarro.setText(null);
+        rbtMasculino.setSelected(true);
+        chkSomenteCidade.setSelected(false);
+        chkUnicoMotorista.setSelected(false);
+        cbxFaixaIdade.setSelectedIndex(0);
+        lblShowValorBase.setText(null);
+        lblShowDescontoSexo.setText(null);
+        lblShowDescontoIdade.setText(null);
+        lblShowDescontoPerfil.setText(null);
+        lblShowValorSeguro.setText(null);
+        txtNome.requestFocus(); //transfere o foco para o campo de inserção de nome
+        
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("3#,##0.00");
+        lblShowValorBase.setText(df.format(objPropSeguro.getValorBase()));
+        lblShowDescontoSexo.setText(df.format(objPropSeguro.calcDescSexo()));
+        lblShowDescontoIdade.setText(df.format(objPropSeguro.calcDescIdade()));
+        lblShowDescontoPerfil.setText(df.format(objPropSeguro.calcDescPerfilCidade() + objPropSeguro.calcDescPerfilMotorista()));
+        lblShowValorSeguro.setText(df.format(objPropSeguro.calcSeguro()));
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,7 +434,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
     private javax.swing.JLabel lblShowDescontoIdade;
     private javax.swing.JLabel lblShowDescontoPerfil;
     private javax.swing.JLabel lblShowDescontoSexo;
-    private javax.swing.JLabel lblShowValorBaseSeguro;
+    private javax.swing.JLabel lblShowValorBase;
     private javax.swing.JLabel lblShowValorSeguro;
     private javax.swing.JLabel lblValorBaseSeguro;
     private javax.swing.JLabel lblValorCarro;
