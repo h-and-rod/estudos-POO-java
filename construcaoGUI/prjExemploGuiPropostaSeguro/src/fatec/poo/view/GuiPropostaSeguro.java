@@ -230,6 +230,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         });
 
         btnCalcular.setText("Calcular");
+        btnCalcular.setEnabled(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -237,6 +238,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         });
 
         btnLimpar.setText("Limpar");
+        btnLimpar.setEnabled(false);
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -348,6 +350,8 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         objPropSeguro.setPerfilMotorista(chkUnicoMotorista.isSelected());
         objPropSeguro.setPerfilCidade(chkSomenteCidade.isSelected());
         
+        btnCalcular.setEnabled(true);
+        
          
         
         
@@ -367,6 +371,8 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         lblShowValorSeguro.setText(null);
         txtNome.requestFocus(); //transfere o foco para o campo de inserção de nome
         
+        btnCalcular.setEnabled(false);
+        btnLimpar.setEnabled(false);
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -376,6 +382,7 @@ public class GuiPropostaSeguro extends javax.swing.JFrame {
         lblShowDescontoIdade.setText(df.format(objPropSeguro.calcDescIdade()));
         lblShowDescontoPerfil.setText(df.format(objPropSeguro.calcDescPerfilCidade() + objPropSeguro.calcDescPerfilMotorista()));
         lblShowValorSeguro.setText(df.format(objPropSeguro.calcSeguro()));
+        btnLimpar.setEnabled(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
